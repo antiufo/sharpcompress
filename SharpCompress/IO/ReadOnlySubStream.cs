@@ -90,5 +90,18 @@ namespace SharpCompress.IO
         {
             throw new System.NotSupportedException();
         }
+
+        public override int ReadByte()
+        {
+            if (BytesLeftToRead == 0) return -1;
+            var r = Stream.ReadByte();
+            BytesLeftToRead--;
+            return r;
+        }
+
+        public override void WriteByte(byte value)
+        {
+            throw new System.NotSupportedException();
+        }
     }
 }

@@ -66,5 +66,15 @@ namespace SharpCompress.IO
         {
             Stream.Write(buffer, offset, count);
         }
+
+        public override int ReadByte()
+        {
+            return Stream.ReadByte();
+        }
+
+        public override void WriteByte(byte value)
+        {
+            Stream.WriteByte(value);
+        }
     }
 }
